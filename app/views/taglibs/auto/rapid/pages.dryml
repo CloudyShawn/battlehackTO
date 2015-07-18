@@ -6,8 +6,460 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Charity"><ht key="charity.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Macrocategory"><ht key="macrocategory.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Subcategory"><ht key="subcategory.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Userpref"><ht key="userpref.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Charity Pages ====== -->
+
+<def tag="index-page" for="Charity">
+  <page merge title="#{ht 'charity.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page charity" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="charity.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="charity.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="charity.actions.new">New Charity</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Charity">
+  <page merge title="#{ht 'charity.new.title', :default=>[' New Charity'] }">
+    <body: class="new-page charity" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="charity.new.heading">
+          New Charity
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'charity.actions.create', :default=>['Create Charity']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Charity">
+  <page merge title="#{ht 'charity.show.title', :default=>['Charity'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page charity" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="charity.show.heading" name="#{name(:no_wrapper => true)}">
+          Charity <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="charity.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Charity
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <view:description param="description" />
+      <field-list fields="catID, info, amntraised" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Charity">
+  <page merge title="#{ht 'charity.edit.title', :default=>['Edit Charity'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page charity" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="charity.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Charity
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'charity.actions.delete', :default=>['Remove This Charity']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Macrocategory Pages ====== -->
+
+<def tag="index-page" for="Macrocategory">
+  <page merge title="#{ht 'macrocategory.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page macrocategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="macrocategory.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="macrocategory.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="macrocategory.actions.new">New Macrocategory</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Macrocategory">
+  <page merge title="#{ht 'macrocategory.new.title', :default=>[' New Macrocategory'] }">
+    <body: class="new-page macrocategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="macrocategory.new.heading">
+          New Macrocategory
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'macrocategory.actions.create', :default=>['Create Macrocategory']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Macrocategory">
+  <page merge title="#{ht 'macrocategory.show.title', :default=>['Macrocategory'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page macrocategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="macrocategory.show.heading" name="#{name(:no_wrapper => true)}">
+          Macrocategory <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="macrocategory.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Macrocategory
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Macrocategory">
+  <page merge title="#{ht 'macrocategory.edit.title', :default=>['Edit Macrocategory'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page macrocategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="macrocategory.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Macrocategory
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'macrocategory.actions.delete', :default=>['Remove This Macrocategory']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Subcategory Pages ====== -->
+
+<def tag="index-page" for="Subcategory">
+  <page merge title="#{ht 'subcategory.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page subcategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="subcategory.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="subcategory.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="subcategory.actions.new">New Subcategory</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Subcategory">
+  <page merge title="#{ht 'subcategory.new.title', :default=>[' New Subcategory'] }">
+    <body: class="new-page subcategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="subcategory.new.heading">
+          New Subcategory
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'subcategory.actions.create', :default=>['Create Subcategory']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Subcategory">
+  <page merge title="#{ht 'subcategory.show.title', :default=>['Subcategory'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page subcategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="subcategory.show.heading" name="#{name(:no_wrapper => true)}">
+          Subcategory <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="subcategory.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Subcategory
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="macro" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Subcategory">
+  <page merge title="#{ht 'subcategory.edit.title', :default=>['Edit Subcategory'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page subcategory" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="subcategory.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Subcategory
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'subcategory.actions.delete', :default=>['Remove This Subcategory']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+
+
+
+<!-- ====== Userpref Pages ====== -->
+
+<def tag="index-page" for="Userpref">
+  <page merge title="#{ht 'userpref.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page userpref" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="userpref.index.heading">
+          <model-name-human model="&model"/>
+        </ht>
+      </h2>
+
+      <p param="count" if>
+        <ht key="userpref.collection.count" count="&collection_count">
+          <count summary/>
+        </ht>
+      </p>
+    </content-header:>
+
+    <content-body: param>
+      <a action="new" to="&model" param="new-link">
+        <ht key="userpref.actions.new">New Userpref</ht>
+      </a>
+
+      <page-nav param="top-page-nav"/>
+
+      <collection param/>
+
+      <page-nav param="bottom-page-nav"/>
+
+
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Userpref">
+  <page merge title="#{ht 'userpref.new.title', :default=>[' New Userpref'] }">
+    <body: class="new-page userpref" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="userpref.new.heading">
+          New Userpref
+        </ht>
+      </h2>
+    </content-header:>
+
+    <content-body: param>
+      <form param>
+        <submit: label="#{ht 'userpref.actions.create', :default=>['Create Userpref']}"/>
+      </form>
+    </content-body:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Userpref">
+  <page merge title="#{ht 'userpref.show.title', :default=>['Userpref'], :name => name(:no_wrapper => true) }" without-aside >
+
+    <body: class="show-page userpref" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="userpref.show.heading" name="#{name(:no_wrapper => true)}">
+          Userpref <name/>
+        </ht>
+      </h2>
+
+      <record-flags fields="" param/>
+
+      <a action="edit" if="&can_edit?" param="edit-link">
+        <ht key="userpref.actions.edit" name="#{name(:no_wrapper => true)}">
+          Edit Userpref
+        </ht>
+      </a>
+    </content-header:>
+
+    <content-body: param>
+      <field-list fields="cID, uID, percent" param/>
+    </content-body:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Userpref">
+  <page merge title="#{ht 'userpref.edit.title', :default=>['Edit Userpref'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page userpref" param/>
+
+    <content-header: param>
+      <h2 param="heading">
+        <ht key="userpref.edit.heading" name="#{name(:no_wrapper => true)}">
+          Edit Userpref
+        </ht>
+      </h2>
+      <delete-button label="#{ht 'userpref.actions.delete', :default=>['Remove This Userpref']}" param/>
+    </content-header:>
+
+    <content-body: param>
+      <form param/>
+    </content-body:>
+
+  </page>
+</def>
+
 
 
 
