@@ -7,5 +7,11 @@ $('.slider-row .slider').on("change mousemove", function(event) {
     $("#"+split[1]+"_actual").val(target.val());
 });
 
+    $(".btn-charity").click(function (event) {
+        $(event.target).toggleClass('active');
+        //toggle the input sliders 
+        var sliderDiv = $(event.target).data("slider");
+        $("#"+sliderDiv).toggleClass("hidden");
+    });
 }
 $(document).ready(main());
