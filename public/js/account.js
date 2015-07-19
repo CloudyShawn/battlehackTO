@@ -5,7 +5,6 @@ $('.slider-row .slider').on("change mousemove", function(event) {
     var sliderActual = target.prop("id");
     var split = sliderActual.split("_");
     $("#"+split[1]+"_actual").val(target.val());
-    console.log(target.val());
 });
 
 }
