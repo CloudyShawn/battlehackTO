@@ -1,6 +1,6 @@
 <div id="nav-bar">
 	<ul>
-		<?php if $_SESSION["login"]
+		<?php if $_SESSION["login"] == 1
 		{
 		?>
 		<a href=""><li>Profile</li></a>
