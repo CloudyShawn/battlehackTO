@@ -1,11 +1,15 @@
 <html>
 
 <head>
-    <title>Rainy Day | Home</title>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="css/styles.css" type="text/css" />
-    <link rel="stylesheet" href="css/home.css" type="text/css" />
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="css/account.css" type="text/css" />
 </head>
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -48,9 +52,6 @@
 </nav>
 
 <body>
-
-
-
     <div id="register" class="hide">
         <div class="overlay">
         </div>
@@ -82,17 +83,7 @@
 
                                 </div>
                             </div>
-                            <!--
-                    <div class="charity-btn-group">
-                        <h1>What kinds of charities are you interested in?</h1>
-                        <span class="btn-charity">Community</span>
-                        <span class="btn-charity">Poverty</span>
-                        <span class="btn-charity">Disaster Relief</span>
-                        <span class="btn-charity">Equality</span>
-                        <span class="btn-charity">Environmental</span>
-                        <span class="btn-charity">Misc.</span>
-                    </div>
--->
+
                             <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-2">
                                     <button type="reset" class="btn btn-default">Cancel</button>
@@ -105,42 +96,78 @@
 
             </div>
 
-
         </div>
     </div>
-    <div id="hero">
-        <div id="hero_content">
-            <h1 style="display:inline;">We help your donations </h1>
-            <h1 id="change_impact"> save lives.</h1>
-            <div>
-                <button class="btn btn-primary">Get Started</button>
-                <button class="btn btn-primary">Explore Charities</button>
-            </div>
 
 
-        </div>
-    </div>
-    <hr>
     <div class="container">
-        <div id="donor_carousel">
-            <h2>Donors</h2>
-            <!--TODO: Write a script to fetch potraits"-->
-            <img src="http://placehold.it/75x75">
-            <img src="http://placehold.it/75x75">
-            <img src="http://placehold.it/75x75">
-            <img src="http://placehold.it/75x75">
-            <img src="http://placehold.it/75x75">
+        <h1>Account Settings</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Subscription:</h4>
 
+                <p>Information about the subscription should go here.</p>
+
+            </div>
+            <div class="col-md-6">
+                <h3>Charities:</h3>
+                <h4>Preferences:</h4>
+                <div class="charity-btn-group">
+                    <h1>What kinds of charities are you interested in?</h1>
+                    <span class="btn-charity" data-slider="comm">Community</span>
+                    <span class="btn-charity" data-slider="poverty">Poverty</span>
+                    <span class="btn-charity" data-slider="relief">Disaster Relief</span>
+                    <span class="btn-charity">Equality</span>
+                    <span class="btn-charity" data-slider="env">Environmental</span>
+                    <span class="btn-charity">Misc.</span>
+                </div>
+
+                <div class="slider_group well">
+
+                    <h4>Distribution</h4>
+
+                    <div class="row slider-row">
+
+                        <div id="env" class="hidden">
+                            <label for="slider_env">Environment</label>
+                            <input id="slider_env" class="slider" type="range" value="0">
+                            <input id="env_actual" class="slider-actual" value="0" readonly>
+                        </div>
+                        <div id="comm" class="hidden">
+                            <label for="slider_comm">Community</label>
+                            <input id="slider_comm" class="slider" type="range" value="0">
+                            <input id="comm_actual" class="slider-actual" slider="slider_comm" value="0" readonly>
+                        </div>
+                        <div id="poverty" class="hidden">
+                            <label for="slider_poverty">Poverty</label>
+                            <input id="slider_poverty" class="slider" type="range" value="0">
+                            <input id="poverty_actual" class="slider-actual" slider="slider_poverty" value="0" readonly>
+                        </div>
+                        <div id="relief" class="hidden">
+                            <label for="slider_relief">Disaster Relief</label>
+                            <input id="slider_relief" class="slider" type="range" value="0">
+                            <input id="relief_actual" class="slider-actual" slider="slider_relief" value="0" readonly>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <h4>Blacklist:</h4>
+            </div>
+            <button class="btn btn-primary">Save Changes</button>
         </div>
-        <hr>
-        <div id="about_us">
-            You like to donate. You're awesome because you do, but you don't know who to donate to? Not sure your money is really affecting anything? We can help.
-        </div>
+
+
     </div>
+  <footer>
+        <% include ../partials/footer %>
+    </footer>
 
 </body>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/home.js"></script>
+<script src="js/account.js"></script>
 
 </html>

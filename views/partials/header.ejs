@@ -1,19 +1,41 @@
 <!-- views/partials/header.ejs -->
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                Woomie
-            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Rainy Day</a>
         </div>
 
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
-      
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Charities <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">All Charities</a>
+                        </li>
+                        <li class="divider"></li>
+
+                        <li><a href="#">I'm a charity category</a>
+                        </li>
+                        <li><a href="#">I'm another category</a>
+                        </li>
+                        <li><a href="#">I'm actually another category</a>
+                        </li>
+                        <li><a href="#">One more separated link</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/account">Account</a>
+                </li>
+                <li><a id="sign_in">Sign In</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>

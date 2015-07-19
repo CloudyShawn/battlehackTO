@@ -5,7 +5,6 @@
 // load the things we need
 var express = require('express'),
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose'),
     morgan = require('morgan'),
     methodOverride = require('method-override'),
     compression = require('compression'),
@@ -36,6 +35,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(express.static('public'));
+
+
 app.set('port', process.env.PORT || 8888);
 
 // set the view engine to ejs
@@ -44,7 +46,7 @@ app.set('view engine', 'ejs');
 // use res.render to load up an ejs view file
 
 // index page 
-app.get('/', routes.index);
+app.use('/', routes.index);
 //app.get('/api/name', api.name);
 
 // redirect all others to the index (HTML5 history)
