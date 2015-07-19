@@ -481,3 +481,4 @@ Processing by FrontController#index as HTML
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   Rendered front/index.dryml (23.0ms)
 Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations" ORDER BY version[0m
