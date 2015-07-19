@@ -1,6 +1,7 @@
 body {
     background-color: floralwhite;
-    margin-top:90px;
+    margin-top:50px;
+    margin-bottom:10em;
 }
 
 .navbar {
@@ -36,7 +37,7 @@ body {
     height: 100%;
     background-color: black;
     opacity: 0.5;
-    z-index: 100
+    z-index: 100;
 }
 
 #register {
@@ -45,7 +46,7 @@ body {
     height: 100%;
 }
 #register.hide{
-    display:none
+    display:none;
 }
 .charity-btn-group{
 }
@@ -70,5 +71,8 @@ body {
     cursor:pointer;
 }
 .btn-charity.active{
-    background-color:darkorange;
+    background-color:orangered;
+}
+.hidden{
+    display:none;
 }

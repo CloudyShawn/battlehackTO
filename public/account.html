@@ -7,50 +7,51 @@
     <link rel="stylesheet" href="css/account.css" type="text/css" />
 </head>
 
-<body>
 
 
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Rainy Day</a>
-            </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Charities <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">All Charities</a>
-                            </li>
-                            <li class="divider"></li>
-
-                            <li><a href="#">I'm a charity category</a>
-                            </li>
-                            <li><a href="#">I'm another category</a>
-                            </li>
-                            <li><a href="#">I'm actually another category</a>
-                            </li>
-                            <li><a href="#">One more separated link</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="/account">Account</a>
-                    </li>
-                    <li><a id="sign_in">Sign In</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Rainy Day</a>
         </div>
-    </nav>
 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Charities <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">All Charities</a>
+                        </li>
+                        <li class="divider"></li>
+
+                        <li><a href="#">I'm a charity category</a>
+                        </li>
+                        <li><a href="#">I'm another category</a>
+                        </li>
+                        <li><a href="#">I'm actually another category</a>
+                        </li>
+                        <li><a href="#">One more separated link</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="/account">Account</a>
+                </li>
+                <li><a id="sign_in">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
     <div id="register" class="hide">
         <div class="overlay">
         </div>
@@ -82,7 +83,7 @@
 
                                 </div>
                             </div>
-                    
+
                             <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-2">
                                     <button type="reset" class="btn btn-default">Cancel</button>
@@ -104,47 +105,58 @@
         <div class="row">
             <div class="col-md-6">
                 <h4>Subscription:</h4>
-                
+
                 <p>Information about the subscription should go here.</p>
-                
+
             </div>
             <div class="col-md-6">
                 <h3>Charities:</h3>
-                        <h4>Preferences:</h4>
-                    <div class="charity-btn-group">
-                        <h1>What kinds of charities are you interested in?</h1>
-                        <span class="btn-charity">Community</span>
-                        <span class="btn-charity">Poverty</span>
-                        <span class="btn-charity">Disaster Relief</span>
-                        <span class="btn-charity">Equality</span>
-                        <span class="btn-charity">Environmental</span>
-                        <span class="btn-charity">Misc.</span>
-                    </div>
+                <h4>Preferences:</h4>
+                <div class="charity-btn-group">
+                    <h1>What kinds of charities are you interested in?</h1>
+                    <span class="btn-charity" data-slider="comm">Community</span>
+                    <span class="btn-charity" data-slider="poverty">Poverty</span>
+                    <span class="btn-charity" data-slider="relief">Disaster Relief</span>
+                    <span class="btn-charity">Equality</span>
+                    <span class="btn-charity" data-slider="env">Environmental</span>
+                    <span class="btn-charity">Misc.</span>
+                </div>
 
                 <div class="slider_group well">
-                                  
-                                   <h4>Distribution</h4>
+
+                    <h4>Distribution</h4>
 
                     <div class="row slider-row">
-                        <label for="slider_env">Environment</label>
-                        <input id="slider_env" class="slider" type="range" value="0">
-                        <input id="env_actual" class="slider-actual" value="0" readonly>
-                        <label for="slider_comm">Community</label>
-                        <input id="slider_comm" class="slider" type="range" value="0">
-                        <input id="comm_actual" class="slider-actual" slider="slider_comm" value="0" readonly>
-                        <label for="slider_poverty">Poverty</label>
-                        <input id="slider_poverty" class="slider" type="range" value="0">
-                        <input id="poverty_actual" class="slider-actual" slider="slider_poverty" value="0" readonly>
-                        <label for="slider_relief">Disaster Relief</label>
-                        <input id="slider_relief" class="slider" type="range" value="0">
-                        <input id="relief_actual" class="slider-actual" slider="slider_relief" value="0" readonly>
+                       
+                        <div id="env" class="hidden">
+                            <label for="slider_env">Environment</label>
+                            <input id="slider_env" class="slider" type="range" value="0">
+                            <input id="env_actual" class="slider-actual" value="0" readonly>
+                        </div>
+                        <div id="comm" class="hidden">
+                            <label for="slider_comm">Community</label>
+                            <input id="slider_comm" class="slider" type="range" value="0">
+                            <input id="comm_actual" class="slider-actual" slider="slider_comm" value="0" readonly>
+                        </div>
+                        <div id="poverty" class="hidden">
+                            <label for="slider_poverty">Poverty</label>
+                            <input id="slider_poverty" class="slider" type="range" value="0">
+                            <input id="poverty_actual" class="slider-actual" slider="slider_poverty" value="0" readonly>
+                        </div>
+                        <div id="relief" class="hidden">
+                            <label for="slider_relief">Disaster Relief</label>
+                            <input id="slider_relief" class="slider" type="range" value="0">
+                            <input id="relief_actual" class="slider-actual" slider="slider_relief" value="0" readonly>
+                        </div>
+
 
                     </div>
 
                 </div>
 
-                <h4>No-List:</h4>
+                <h4>Blacklist:</h4>
             </div>
+            <button class="btn btn-primary">Save Changes</button>
         </div>
 
 

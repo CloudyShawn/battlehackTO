@@ -3,7 +3,7 @@
     max-width: 100%;
     max-height: 90%;
     height: 500px;
-    background-image: url("http://placehold.it/800x600");
+    background-image: url("../img/hero.jpg");
 }
 
 #hero_content {
@@ -19,8 +19,10 @@
 }
 
 #hero_content h1 {
-    font-size: 3em;
+    font-size: 2em;
     color: white;
+}
+#hero_content button{
 }
 
 #donor_carousel {
@@ -30,6 +32,10 @@
 
 #donor_carousel img {
     margin-left: 0.25em;
-    margin-right: 0.25em
+    margin-right: 0.25em;
 }
-
+h1#change_impact{
+    display:inline;
+    color:red;
+    font-size:2.5em;
+}
