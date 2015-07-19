@@ -1,0 +1,18 @@
+.slider-group{
+    width:100%;
+}
+.slider-row{
+    padding:2em;
+}
+.slider-row label{
+    display:block;
+}
+.slider-row input{
+    display:inline;
+}
+.slider-row .slider{
+    width:60%;
+}
+.slider-row .slider-actual{
+    width:50px;
+}
