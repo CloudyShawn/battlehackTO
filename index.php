@@ -8,6 +8,7 @@
 	<title>Rainy Day</title>
 </head>
 <body>
-	<?php require(/layout/_header.php); ?>
+	<?php require(./layout/_header.php); ?>
+	<p>boo</p>
 </body>
 </html>
