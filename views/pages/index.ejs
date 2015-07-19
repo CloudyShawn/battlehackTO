@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="jumbotron">
+                    <h1>This is great</h1>
+                    <p>Welcome to templating using EJS</p>
+                    <div class="well">
+                        <% tenants.forEach(function(tenant){%>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <%=tenant.firstName %>
+                                </div>
+                                <div class="col-sm-4">
+                                    <%=tenant.lastName %>
+                                </div>
+                                <div class="col-sm-4">
+                                    <%=tenant.geneder %>
+                                </div>
+                            </div>
+                            <%}); %>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form role = "form">
+                    <div class="form-group">
+                        <label for="tenant_first_name">Tenant First Name:</label>
+                        <input type="text" class = "form-control" id = "tenant_first_name">
+                    </div>
+                      <div class="form-group">
+                        <label for="tenant_lastname">Tenant Last Name:</label>
+                        <input type="text" class = "form-control" id = "tenant_last_name">
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>
