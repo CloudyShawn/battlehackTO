@@ -5,3 +5,5 @@
 2. Front-end beautification
 3. Write Sequel Queries
 4. Create a charity page(in progress);
+5. User signup
+6. Database routing
