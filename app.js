@@ -10,7 +10,10 @@ var express = require('express'),
     methodOverride = require('method-override'),
     compression = require('compression'),
     api = require('./routes/api'),
-    routes = require('./routes');
+    routes = require('./routes'),
+    Sequelize = require('sequelize');
+
+ver sequelize = new Sequelize('rainyday', 'postgres' , 'password');
 
 var app = express();
 
