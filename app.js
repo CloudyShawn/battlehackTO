@@ -13,7 +13,10 @@ var express = require('express'),
     routes = require('./routes'),
     Sequelize = require('sequelize');
 
-ver sequelize = new Sequelize('rainyday', 'postgres' , 'password');
+ver sequelize = new Sequelize('rainyday', 'postgres' , 'akshay94', {
+    host: 'localhost',
+    dialect: 'postgres'
+});
 
 var app = express();
 
