@@ -15,16 +15,18 @@ router.post('/create', function(req, res) {
 });
 
 router.get('/:user_id', function(req, res) {
-	var user = User.findAll({
+	var user = models.User.findAll({
 		where: {
 			id: req.params.user_id
 		}
+	}).then(function () {
+		res.render('pages/index', {
+			firstname: user.firstname,
+			lastname: user.lastname,
+			email: user.email
+		});
 	});
-	res.render('pages/userinfo', {
-		firstname: user.firstname,
-		lastname: user.lastname,
-		email: user.email
-	});
+	
 });
 
 module.exports = router;

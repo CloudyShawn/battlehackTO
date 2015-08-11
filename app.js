@@ -10,9 +10,9 @@ var express = require('express'),
     methodOverride = require('method-override'),
     compression = require('compression'),
     api = require('./routes/api'),
-    routes = require('./routes'),
+    routes = require(__dirname+'/routes'),
     Sequelize = require('sequelize');
-    users = require('./routes/users')
+    users = require(__dirname+'/routes/users')
 
 var sequelize = new Sequelize('rainyday', 'postgres' , 'akshay94', {
     host: 'localhost',
