@@ -1,7 +1,7 @@
 var express = require("express");
 var Router = express.Router();
 var braintree = require('braintree');
-// var models = require('../models');
+var models = require('../models');
 //braintree
 //xlimitlessskiesx@gmail.com:bt123456
 var gateway = braintree.connect({
@@ -25,14 +25,13 @@ Router.route("/client_token").get(function (req, res) {
 });
 
 Router.route("/charities").get(function (req, res) {
-  
-	res.render("pages/charities");
+  var allcharities = models.Charity.findAll();
+	res.render("pages/charities", {
+    allcharities: allcharities
+  });
 });
 
-Router.post('/createUser', function(req, res) {
-  console.log("post started")
-    res.redirect('/');
-});
+
 
 //Db routes
 Router.route

@@ -4,6 +4,11 @@
 	<title>Rainy Day | Charities</title>
 </head>
 <body>
-<p>List of charities go here!</p>
+<% allcharities.forEach(function(charity){ %>
+	<p>
+	<%= charity.name %>, 
+	<%= charity.description %>
+	</p>
+	<% }); %>
 </body>
 </html>

@@ -12,7 +12,8 @@ var express = require('express'),
     api = require('./routes/api'),
     routes = require(__dirname+'/routes'),
     Sequelize = require('sequelize');
-    users = require(__dirname+'/routes/users')
+    users = require(__dirname+'/routes/users');
+    charity = require(__dirname+'/routes/charities');
 
 var sequelize = new Sequelize('rainyday', 'postgres' , 'akshay94', {
     host: 'localhost',
@@ -50,6 +51,7 @@ app.set('view engine', 'ejs');
 app.use('/', routes.index);
 app.use('/api',api.router);
 app.use('/users', users);
+app.use('/charity', charity);
 //app.get('/api/name', api.name);
 
 app.listen(app.get('port'), function () {

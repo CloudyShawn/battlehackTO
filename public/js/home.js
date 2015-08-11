@@ -8,7 +8,7 @@ function main() {
     });
     $(".overlay").click(function(event){
         $("#register").toggleClass("hide");
-    
+        
     });
     
     window.setInterval(changeImpact,2000);

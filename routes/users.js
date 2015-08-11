@@ -3,7 +3,6 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/create', function(req, res) {
-	console.log("post started")
 	models.User.create({
 	firstname: req.body.firstname,
     lastname: req.body.lastname,
