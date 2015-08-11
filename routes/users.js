@@ -20,11 +20,11 @@ router.get('/:user_id', function(req, res) {
 			id: req.params.user_id
 		}
 	});
-	res.render('pages/userinfo' {
+	res.render('pages/userinfo', {
 		firstname: user.firstname,
 		lastname: user.lastname,
 		email: user.email
 	});
 });
 
-exports.index = router;
+module.exports = router;
