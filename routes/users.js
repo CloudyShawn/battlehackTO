@@ -2,7 +2,8 @@ var models = require('../models');
 var express = require('express');
 var router = express.Router();
 
-router.post('/create', function(req, res) {
+router.all('/create', function(req, res) {
+	console.log("post started")
 	models.User.create({
 	firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -12,3 +13,18 @@ router.post('/create', function(req, res) {
 		res.redirect('/');
 	});
 });
+
+router.get('/:user_id', function(req, res) {
+	var user = User.findAll({
+		where: {
+			id: req.params.user_id
+		}
+	});
+	res.render('pages/userinfo' {
+		firstname: user.firstname,
+		lastname: user.lastname,
+		email: user.email
+	});
+});
+
+exports.index = router;
