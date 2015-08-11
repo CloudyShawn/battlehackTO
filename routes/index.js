@@ -1,6 +1,7 @@
 var express = require("express");
 var Router = express.Router();
 var braintree = require('braintree');
+var models = require('../models');
 //braintree
 //xlimitlessskiesx@gmail.com:bt123456
 var gateway = braintree.connect({
@@ -23,9 +24,22 @@ Router.route("/client_token").get(function (req, res) {
     });
 });
 Router.route("/charities").get(function (req, res) {
+  
 	res.render("pages/charities");
 });
 
+Router.post('/createUser', function(req, res) {
+  console.log("post started")
+  models.user.create({
+  firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    password: req.body.password,
+    email: req.body.email
+  }).then(function() {
+    res.redirect('/');
+  });
+});
 
 //Db routes
+Router.route
 exports.index = Router;
