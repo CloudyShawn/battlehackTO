@@ -25,10 +25,14 @@ Router.route("/client_token").get(function (req, res) {
 });
 
 Router.route("/charities").get(function (req, res) {
-  var allcharities = models.Charity.findAll();
-	res.render("pages/charities", {
-    allcharities: allcharities
+  models.Charity.findAll().then(function(response) {
+    res.render ("pages/charities", {
+      allcharities: response
+    });
   });
+  // res.render("pages/charities", {
+ //    
+ //  });
 });
 
 

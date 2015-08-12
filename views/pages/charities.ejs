@@ -2,13 +2,28 @@
 <html>
 <head>
 	<title>Rainy Day | Charities</title>
+	<% include ../partials/head %>
 </head>
 <body>
-<% allcharities.forEach(function(charity){ %>
+<header>
+	<% include ../partials/header %>
+</header>
+<%- include ../partials/registration_user %>
+<% for(i = 0; i < allcharities.length;i++) {  %>
 	<p>
-	<%= charity.name %>, 
-	<%= charity.description %>
+	<%= allcharities[i].name %>
+	<%= allcharities[i].description %>
 	</p>
-	<% }); %>
+<% } %>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/home.js"></script>
+
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
 </body>
 </html>
