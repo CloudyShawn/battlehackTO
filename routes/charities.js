@@ -15,4 +15,12 @@ router.get('/new', function(req, res) {
 	res.render('partials/registration_charity');
 });
 
+// router.get('/:charity_name', function(req, res) {
+// 	models.Charity.findAll({
+// 		where {
+// 			id: req.params
+// 		}
+// 	})
+// });
+
 module.exports = router;

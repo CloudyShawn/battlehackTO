@@ -13,7 +13,7 @@ router.post('/create', function(req, res) {
 	});
 });
 
-router.get('/:user_id', function(req, res) {
+router.get('/:user_name', function(req, res) {
 	var user = models.User.findAll({
 		where: {
 			id: req.params.user_id
