@@ -6,3 +6,7 @@
 - Add sessions
 - Client side requseting the braintree token. /api/users
 - Front-end beautification
+
+
+###Production
+- Fix Database
