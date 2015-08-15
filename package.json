@@ -22,5 +22,8 @@
     "sequelize": "*",
     "sequelize-cli": "^1.7.4",
     "twitter-node-client": "0.0.6"
+  },
+  "engines": {
+    "node": "0.12.x"
   }
 }
