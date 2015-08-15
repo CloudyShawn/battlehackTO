@@ -22,6 +22,7 @@ var sequelize = new Sequelize('rainyday', 'postgres' , 'akshay94', {
 
 var app = express();
 
+app.locals.$ = require('native-view-helpers');
 /**
  * Configuration
  */
@@ -43,6 +44,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 app.set('port', process.env.PORT || 8888);
 app.set('view engine', 'ejs');
+
 
 
 

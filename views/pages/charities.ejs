@@ -9,12 +9,19 @@
 	<% include ../partials/header %>
 </header>
 <%- include ../partials/registration_user %>
+<ul>
 <% for(i = 0; i < allcharities.length;i++) {  %>
-	<p>
-	<%= allcharities[i].name %>
-	<%= allcharities[i].description %>
+	<div id="charityEntry">
+	<li>
+	<p id="charityname">
+		<%- $.html.a('/charity/'+allcharities[i].name, allcharities[i].name) %>
 	</p>
+		<p id="charitydescription">
+			<%= allcharities[i].description %>
+		</p>
+	</li>	
 <% } %>
+</ul>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
