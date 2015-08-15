@@ -13,16 +13,27 @@ router.post('/create', function(req, res) {
 	});
 });
 
-router.get('/:user_name', function(req, res) {
-	var user = models.User.findAll({
-		where: {
-			id: req.params.user_id
-		}
-	}).then(function () {
+router.get('/:user_id', function(req, res) {
+	
+	var finduser = function() {
+		return models.User.findAll({
+			where: {
+				id: req.params.user_id
+			}
+		});	
+	}
+	
+
+
+	finduser().then(function(response) {
+		console.log (response);
+		console.log (response[0].firstname);
+		console.log (response[0].lastname);
+		console.log (response[0].email);
 		res.render('pages/index', {
-			firstname: user.firstname,
-			lastname: user.lastname,
-			email: user.email
+			firstname: response[0].firstname,
+			lastname: response[0].lastname,
+			email: response[0].email
 		});
 	});
 	

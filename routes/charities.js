@@ -15,12 +15,22 @@ router.get('/new', function(req, res) {
 	res.render('partials/registration_charity');
 });
 
-// router.get('/:charity_name', function(req, res) {
-// 	models.Charity.findAll({
-// 		where {
-// 			id: req.params
-// 		}
-// 	})
-// });
+router.get('/:charity_name', function(req, res) {
+
+	var charityget = function() {
+		return models.Charity.findAll({
+				where: {
+				name: req.params.charity_name
+			}});
+	}
+
+
+	charityget().then(function(response) {
+		res.render('pages/charity', {
+			charname: response[0].name,
+			chardesc: response[0].description
+		});
+	});
+});
 
 module.exports = router;

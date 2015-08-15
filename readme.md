@@ -1,9 +1,8 @@
 #Rainy Day
 
 ## TODO:
-1. Client side requseting the braintree token. /api/users
-2. Front-end beautification
-3. Write Sequel Queries
-4. Create a charity page(in progress);
-5. User signup
-6. Database routing
+- Fix css/js not linking to routes outside of index.js
+- Fix user signup/ add validation
+- Add sessions
+- Client side requseting the braintree token. /api/users
+- Front-end beautification
